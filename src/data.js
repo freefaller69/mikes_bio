@@ -8,7 +8,7 @@ const data = {
   sections: [
     {
       id: 1,
-      span: 7,
+      span: 9,
       position: 5,
       heading: "Early Years",
       text: [
@@ -17,7 +17,7 @@ const data = {
     },
     {
       id: 2,
-      span: 10,
+      span: 12,
       position: 2,
       heading: "Career History",
       text: [
@@ -27,7 +27,7 @@ const data = {
     },
     {
       id: 3,
-      span: 10,
+      span: 12,
       position: 2,
       heading: "Hobbies",
       text: [
