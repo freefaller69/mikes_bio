@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Paragraph } from "@microsoft/fast-components-react-msft";
+import { Heading, Paragraph, Card } from "@microsoft/fast-components-react-msft";
 import { DesignSystemDefaults } from '@microsoft/fast-components-styles-msft';
 import { DesignSystemProvider } from '@microsoft/fast-jss-manager-react';
 
@@ -9,11 +9,10 @@ const designSystem = {
 
 const designSystemOverrides = {
   ...designSystem,
-  backgroundColor: "#000",
+  backgroundColor: "#2202b3",
 };
 
 const BioSection = ({heading, text}) => {
-    
   return(
     <DesignSystemProvider designSystem={designSystem}>
       <div>
@@ -26,9 +25,12 @@ const BioSection = ({heading, text}) => {
             </Heading>
           </div>
         </DesignSystemProvider>
-        {text.map((p, i) =>
-          <Paragraph key={i}>{p}</Paragraph>
-          )}
+        <Card
+          tag={"section"}>
+          {text.map((p, i) => {
+            return <Paragraph key={i}>{p}</Paragraph>
+          })}
+        </Card>
     </div>
     </DesignSystemProvider>
   )

@@ -18,16 +18,18 @@ const About = (props) => {
                     >
                     <ProfileImage imageDetail={data.image} />
                 </Column>
-                {sections.map((section) =>
-                <Column
-                key={section.id}
-                span={section.span}
-                // position={section.position}
-                >
-                    <BioSection
-                        heading={section.heading}
-                        text={section.text} />
-                </Column>
+                {sections.map((section) => {
+                    return <Column
+                    key={section.id}
+                    span={section.span}
+                    // position={section.position}
+                    >
+                        <BioSection
+                            heading={section.heading}
+                            text={section.text} />
+                    </Column>
+                }
+
                 )}
             </Grid>
         </Page>
