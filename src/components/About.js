@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Page, Grid, Column } from "@microsoft/fast-layouts-react";
 import { Select, SelectOption } from "@microsoft/fast-components-react-msft";
+import Heading from "@microsoft/fast-components-react-msft/dist/heading/heading";
 
 import ProfileImage from "./ProfileImage";
 import BioSection from "./BioSection";
+import styles from './About.module.css';
 
 import data from "../data";
 
@@ -40,7 +42,16 @@ class About extends Component {
           >
             <ProfileImage imageDetail={data.image} />
           </Column>
-          <Column span={7}>
+          <Column
+            className={styles.mainHeader}
+            span={7}
+          >
+            <Heading
+              tag={'h1'}
+              size={1}
+            >
+              Meet Mike
+            </Heading>
               <Select
                 placeholder={"Early Years"}
                 onValueChange={this.handleChange}
