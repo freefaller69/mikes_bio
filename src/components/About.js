@@ -16,6 +16,7 @@ class About extends Component {
     this.state = {
       sections: [],
       selectedSection: 1,
+      imageData: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,6 +25,7 @@ class About extends Component {
   componentDidMount() {
     this.setState({
       sections: data.sections,
+      imageData: data.image
     });
   }
 
@@ -38,9 +40,9 @@ class About extends Component {
       <Page>
         <Grid gutter={24}>
           <Column
-            span={data.image.span}
+            span={this.state.imageData.span}
           >
-            <ProfileImage imageDetail={data.image} />
+            <ProfileImage imageDetail={this.state.imageData} />
           </Column>
           <Column
             className={styles.mainHeader}
@@ -75,7 +77,11 @@ class About extends Component {
                   key={section.id}
                   span={section.span}
                 >
-                  <BioSection heading={section.heading} text={section.text} />
+                  <BioSection
+                    className={section.heading}
+                    heading={section.heading}
+                    text={section.text}
+                    backColor={section.headingColor} />
                 </Column>
               );
             }

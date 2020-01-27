@@ -8,12 +8,13 @@ const designSystem = {
   ...DesignSystemDefaults
 };
 
-const designSystemOverrides = {
-  ...designSystem,
-  backgroundColor: "#2202b3",
-};
+let designSystemOverrides;
 
-const BioSection = ({heading, text}) => {
+const BioSection = ({heading, text, backColor}) => {
+  {designSystemOverrides = {
+    designSystemOverrides,
+    backgroundColor: backColor
+  }}
   return(
     <DesignSystemProvider designSystem={designSystem}>
       <div>
