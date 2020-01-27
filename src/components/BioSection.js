@@ -2,6 +2,7 @@ import React from 'react';
 import { Heading, Paragraph, Card } from "@microsoft/fast-components-react-msft";
 import { DesignSystemDefaults } from '@microsoft/fast-components-styles-msft';
 import { DesignSystemProvider } from '@microsoft/fast-jss-manager-react';
+import styles from './BioSection.module.css';
 
 const designSystem = {
   ...DesignSystemDefaults
@@ -19,6 +20,7 @@ const BioSection = ({heading, text}) => {
         <DesignSystemProvider designSystem={designSystemOverrides}>
           <div style={{backgroundColor: designSystemOverrides.backgroundColor}}>
             <Heading
+              className={styles.heading}
               tag={"h4"}
               size={4}>
               {heading}
@@ -28,7 +30,7 @@ const BioSection = ({heading, text}) => {
         <Card
           tag={"section"}>
           {text.map((p, i) => {
-            return <Paragraph key={i}>{p}</Paragraph>
+            return <Paragraph className={styles.text} key={i}>{p}</Paragraph>
           })}
         </Card>
     </div>
