@@ -1,6 +1,6 @@
 const data = {
   image: {
-    span: 5,
+    span: 4,
     src: "https://placehold.it/200x200/3E3E3E/171717",
     alt: "Placeholder image"
   },
