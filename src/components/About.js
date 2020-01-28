@@ -55,6 +55,7 @@ class About extends Component {
               Meet Mike
             </Heading>
               <Select
+                className={styles.sectionSelect}
                 placeholder={"Early Years"}
                 onValueChange={this.handleChange}
               >
@@ -78,7 +79,6 @@ class About extends Component {
                   span={section.span}
                 >
                   <BioSection
-                    className={section.heading}
                     heading={section.heading}
                     text={section.text}
                     backColor={section.headingColor} />
